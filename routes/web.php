@@ -14,6 +14,9 @@
 Route::get('/admin', function () {
     return view('vendor.backpack.base.dashboard');
 });
+Route::get('/admin/tables', function () {
+    return view('vendor.backpack.base.tables');
+});
 
 Auth::routes();
 
