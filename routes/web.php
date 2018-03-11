@@ -18,6 +18,14 @@ Route::get('/admin/tables', function () {
     return view('vendor.backpack.base.tables');
 });
 
+Route::get('/', function(){
+	return view('welcome');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('photos', 'PhotoController');
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
